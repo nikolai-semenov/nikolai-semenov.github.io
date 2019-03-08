@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<script>
+  var siteLangs = Map([["ru", "Russian"],
+                       ["en", "English"]]);
+  var lang = navigator.languages.map(x => x.substr(0, 2).toLowerCase()).filter(x => siteLangs.has(x))[0] || "en";
+  window.location.href = lang; 
+</script>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>Filler for GitHub Pages.</p>
-</body>
+  <body>
+    <p>Redirecting you to the <script>siteLangs.get(lang)</script> version of my site...</p>
+  </body>
 </html>
