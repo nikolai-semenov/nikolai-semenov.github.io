@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <script>
-//  var siteLangs = new Map([["ru", "Russian"],
-//                           ["en", "English"]]);
-//  var lang = navigator.languages.map(x => x.substr(0, 2).toLowerCase()).filter(x => siteLangs.has(x))[0] || "en";
-//  window.location.href = lang; 
+  var siteLangs = new Map([["ru", "Russian"],
+                           ["en", "English"]]);
+  var lang = navigator.languages.map(x => x.substr(0, 2).toLowerCase()).filter(x => siteLangs.has(x))[0] || "en";
+  window.location.href = lang;
 </script>
 <html>
   <head>
-    <meta http-equiv="REFRESH" content="0;url=https://nikolai-semenov.github.io/en/">
+    <title>Redirecting...</title>
+    <noscript>
+      <meta http-equiv="REFRESH" content="0;url=https://nikolai-semenov.github.io/en/">
+    </noscript>
   </head>
   <body>
-    <p>Redirecting to the <script>a='hello';a</script><noscript>English</noscript> version of site.</p>
+    <p>Redirecting to the version of site in proper language.</p>
   </body>
 </html>
