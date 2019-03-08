@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <script>
-  var siteLangs = Map([["ru", "Russian"],
-                       ["en", "English"]]);
+  var siteLangs = new Map([["ru", "Russian"],
+                           ["en", "English"]]);
   var lang = navigator.languages.map(x => x.substr(0, 2).toLowerCase()).filter(x => siteLangs.has(x))[0] || "en";
   window.location.href = lang; 
 </script>
