@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<script>
-  var siteLangs = new Map([["ru", "Russian"],
-                           ["en", "English"]]);
-  var lang = navigator.languages.map(x => x.substr(0, 2).toLowerCase()).filter(x => siteLangs.has(x))[0] || "en";
-  window.location.href = lang;
-</script>
-<html>
-  <head>
-    <title>Redirecting...</title>
-    <noscript>
-      <meta http-equiv="REFRESH" content="0;url=https://nikolai-semenov.github.io/en/">
-    </noscript>
-  </head>
-  <body>
-    <p>Redirecting to the version of site in proper language.</p>
-  </body>
+    <html>
+    <head>
+        <title>Nikolai Semenov</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    </head>
+    <body>
+        <h1>MIPT results</h1>
+        <div id="plot-1">
+            <!-- First plotly chart -->
+        </div>
+        <script>
+            Plotly.d3.csv('data/marks.csv', (err, rows) => {
+                var trace = {
+                    x: rows.map(r => r.semester),
+                    y: rows.map(r => r.mark),
+                    mode: 'markers',
+                    type: 'scatter'
+                };
+
+                var data = [trace]
+
+                Plotly.newPlot('plot-1', data)
+            });
+        </script>
+    </body>
 </html>
