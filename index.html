@@ -5,22 +5,39 @@
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
     <body>
-        <h1>MIPT bachelor results</h1>
-        <div id="plot-1">
-            <!-- First plotly chart -->
-        </div>
+        <div id="mipt_grades"></div>
         <script>
             Plotly.d3.csv('data/marks.csv', (err, rows) => {
-                var trace = {
+                var average = {
+                    name: 'Average',
                     x: rows.map(r => r.semester),
-                    y: rows.map(r => r.mark),
-                    mode: 'markers',
+                    y: rows.map(r => r.average),
+                    mode: 'lines+markers',
+                    type: 'scatter'
+                };
+                
+                var rolling_average = {
+                    name: 'Rolling average',
+                    x: rows.map(r => r.semester),
+                    y: rows.map(r => r.rolling_average),
+                    mode: 'lines+markers',
                     type: 'scatter'
                 };
 
-                var data = [trace]
+                var data = [average, rolling_average]
+                
+                var layout = {
+                    yaxis: {
+                        title: 'Grade',
+                        range: [0, 10]
+                    },
+                    xaxis: {
+                        title: 'Semester'
+                    },
+                    title: 'MIPT bachelor results'
+                };
 
-                Plotly.newPlot('plot-1', data)
+                Plotly.newPlot('mipt_grades', data, layout);
             });
         </script>
     </body>
