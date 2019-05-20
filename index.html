@@ -1,44 +1,16 @@
 <!DOCTYPE html>
-    <html>
+<html>
     <head>
+        <meta charset="utf-8" /> 
         <title>Nikolai Semenov</title>
         <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="scripts/plotting.js"></script>
     </head>
     <body>
+        <input type="checkbox" id="five_point" onchange="plot_all();"/>5-point system<br>
         <div id="mipt_grades"></div>
-        <script>
-            Plotly.d3.csv('data/marks.csv', (err, rows) => {
-                var average = {
-                    name: 'Average',
-                    x: rows.map(r => r.semester),
-                    y: rows.map(r => r.average),
-                    mode: 'lines+markers',
-                    type: 'scatter'
-                };
-                
-                var rolling_average = {
-                    name: 'Rolling average',
-                    x: rows.map(r => r.semester),
-                    y: rows.map(r => r.rolling_average),
-                    mode: 'lines+markers',
-                    type: 'scatter'
-                };
-
-                var data = [average, rolling_average]
-                
-                var layout = {
-                    yaxis: {
-                        title: 'Grade',
-                        range: [0, 10]
-                    },
-                    xaxis: {
-                        title: 'Semester'
-                    },
-                    title: 'MIPT bachelor results'
-                };
-
-                Plotly.newPlot('mipt_grades', data, layout);
-            });
-        </script>
+        <div id="math_grades"></div>
+        <div id="cs_grades"></div>
+        <div id="phys_grades"></div>
     </body>
 </html>
