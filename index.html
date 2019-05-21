@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8" /> 
         <title>Nikolai Semenov</title>
-        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script src="scripts/plotting.js"></script>
+        <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script type="text/javascript"  src="scripts/plotting.js"></script>
+        <link rel="stylesheet" href="styles/plotting.css">
     </head>
     <body>
         <input type="checkbox" id="five_point" onchange="plot_all();"/>5-point system<br>
-        <div id="mipt_grades"></div>
-        <div id="math_grades"></div>
-        <div id="cs_grades"></div>
-        <div id="phys_grades"></div>
+        <div class="plot" id="mipt_grades"></div>
+        <div class="plot" id="math_grades"></div>
+        <div class="plot" id="cs_grades"></div>
+        <div class="plot" id="phys_grades"></div>
     </body>
 </html>

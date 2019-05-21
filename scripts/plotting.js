@@ -18,12 +18,14 @@ function linear_plot(x, y_s, y_range, xlabel, ylabel, names, title, id) {
         );
     }
     let layout = {
-            yaxis: {
+        yaxis: {
             title: ylabel,
-            range: y_range
+            range: y_range,
+            dtick: 1
         },
         xaxis: {
-            title: xlabel
+            title: xlabel,
+            dtick: 1
         },
         title: title
     };
@@ -74,3 +76,9 @@ function plot_all() {
 }
 
 plot_all();
+
+window.onresize = function() {
+    for (let plot of document.getElementsByClassName('js-plotly-plot')) {
+        Plotly.Plots.resize(plot);
+    }
+}
