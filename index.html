@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" /> 
-        <title>Nikolai Semenov</title>
-        <script type="text/javascript" src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-        <script type="text/javascript"  src="scripts/plotting.js"></script>
-        <link rel="stylesheet" href="styles/plotting.css">
-    </head>
-    <body>
-        <input type="checkbox" id="five_point" onchange="plot_all();"/>5-point system<br>
-        <div class="plot" id="mipt_grades"></div>
-        <div class="plot" id="math_grades"></div>
-        <div class="plot" id="cs_grades"></div>
-        <div class="plot" id="phys_grades"></div>
-    </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>

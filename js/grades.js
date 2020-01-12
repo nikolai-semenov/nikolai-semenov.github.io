@@ -60,7 +60,7 @@ function ten_to_five(mark) {
 var checked = false;
 
 function plot_all() {
-    Plotly.d3.csv('data/marks.csv', data => {
+    Plotly.d3.csv('../assets/grades.csv', data => {
         data = data.filter(row => row.mark)
         checked = document.getElementById("five_point").checked;
         if (checked) {
