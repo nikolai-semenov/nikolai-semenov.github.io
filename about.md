@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+# Hi
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+I'm Nikolai. Currently I'm studying at MIPT and work as ML engineer.
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+# About this site
+
+I created this blog to challenge my English and writing skills. However, Russian and German versions will be available soon. For now I'll try to fill it with (I hope) interesting articles about mathematics, computational physics, programming, machine learning, economics and other fascinating fields of study.
